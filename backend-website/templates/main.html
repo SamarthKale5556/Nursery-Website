@@ -1,6 +1,5 @@
 {% load static%}
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,12 +10,13 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
     />
-    {% block style %}<link rel="stylesheet" href="{% static 'css/home_page.css'%}" />{% endblock style %}
-    </head>
+    {% block style %}
+      <link rel="stylesheet" href="{% static 'css/home_page.css'%}" />
+    {% endblock style %}
+  </head>
   <body>
     {% block content %}
-    {% comment %} @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); {% endcomment %}
-
+    <!-- Navigation and Hero sections -->
     <nav>
       <div class="logo">Rudra Nursery</div>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -30,6 +30,7 @@
         <li><a href="/accounts/login/">Login</a></li>
       </ul>
     </nav>
+
     <div class="blur-overlay"></div>
     <section class="hero">
       <div class="hero">
@@ -114,9 +115,38 @@
       </div>
     </section>
     {% endblock content %}
-    
-   {% block script %}
-   <script src="{% static 'js/home_page.js' %}"></script>
+
+    <!-- ✅ Toast Popup HTML -->
+    <div id="cart-toast" style="
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #4caf50;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 16px;
+      z-index: 9999;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    ">
+      ✅ Added to cart.
+      <a href="/cart" style="color: #fff; text-decoration: underline; margin-left: 10px;">View Cart</a>
+    </div>
+
+    {% block script %}
+    <script src="{% static 'js/home_page.js' %}"></script>
+
+    <!-- ✅ Toast Function -->
+    <script>
+      function showCartToast() {
+        const toast = document.getElementById('cart-toast');
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 3000);
+      }
+    </script>
     {% endblock script %}
-</body>
+  </body>
 </html>
