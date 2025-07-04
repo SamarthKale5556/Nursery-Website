@@ -34,7 +34,8 @@ SECRET_KEY = 'django-insecure-^sneugcevffblx-@om3#2b^94yvqb@g&(x$s_dfq1&br@#l#!i
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['.github.dev', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['nursery-website.onrender.com', 'localhost', '127.0.0.1']
+
 
 # Application definition
 
