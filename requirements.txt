@@ -11,3 +11,4 @@ django-unfold
 django-import-export[all]
 razorpay
 gunicorn
+setuptools
