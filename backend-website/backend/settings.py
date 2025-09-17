@@ -33,8 +33,12 @@ SECRET_KEY = 'django-insecure-^sneugcevffblx-@om3#2b^94yvqb@g&(x$s_dfq1&br@#l#!i
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ALLOWED_HOSTS = [
+    'rudray-nursery.onrender.com',  # ✅ your live Render domain
+    'localhost',                    # for local dev
+    '127.0.0.1'                     # for local dev
+]
 
-ALLOWED_HOSTS = ['nursery-website.onrender.com', 'localhost', '127.0.0.1']
 
 
 # Application definition
